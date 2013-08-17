@@ -1,0 +1,15 @@
+<h1>SearchMovie#movie</h1>
+<% @movie %>
+<%require 'open-uri'%>
+<%require 'json'%>
+
+<%movie=@movie%>
+<%data = open("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=ruspaqu4yyhhfyssxd5gtsjd&q="+movie+"&page_limit=1").read()
+%>
+
+
+<%result = JSON.parse(data)
+%>
+
+<%synopsis= result['movies'][0]['synopsis']%>
+<%= synopsis%>
