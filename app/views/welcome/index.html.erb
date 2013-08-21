@@ -1,7 +1,9 @@
-<h1>Welcome to movieclub</h1>
+<div class="center hero-unit">
+<h1>Welcome to movie club!</h1>
 
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 <% end %>
+</div>
