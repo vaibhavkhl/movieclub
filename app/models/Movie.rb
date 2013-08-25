@@ -4,7 +4,8 @@ require 'json'
 class Movie < ActiveRecord::Base
 
 def viewMovie(movie)
- 
+ movie = movie.downcase.tr(" ", "+")
+
 
  data=open("http://api.rottentomatoes.com/api/public/v1.0/movies.json?q="+movie+"&page_limit=10&apikey=ruspaqu4yyhhfyssxd5gtsjd").read()
 
