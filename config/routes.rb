@@ -1,5 +1,7 @@
 Movieclub::Application.routes.draw do
+  resources :users
   get "users/new"
+
   get "search_movie/movie" 
   
   get "welcome/index" 
@@ -9,6 +11,8 @@ Movieclub::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'welcome#index'
   get '/search' => 'search_movie#movie'
+  match '/signup', to: 'users#new',  via: 'get'
+
   # Example of regular route:
   
   # Example of named route that can be invoked with purchase_url(id: product.id)

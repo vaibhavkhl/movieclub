@@ -1,8 +1,9 @@
 <div class="center hero-unit">
-<h1>Welcome to movie club!</h1>
+<h1>Welcome to Movie Street!</h1>
 
 <%= form_tag("/search", method: "get") do %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search", class: "btn btn-large btn-primary") %>
+  <%= link_to "Sign up now!" , signup_path , class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
