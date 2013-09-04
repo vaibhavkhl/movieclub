@@ -1,4 +1,5 @@
 Movieclub::Application.routes.draw do
+  get "users/new"
   get "search_movie/movie" 
   
   get "welcome/index" 
