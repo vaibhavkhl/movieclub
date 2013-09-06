@@ -1,5 +1,6 @@
 Movieclub::Application.routes.draw do
   resources :users
+   resources :sessions, only: [:new, :create, :destroy]
   get "users/new"
 
   get "search_movie/movie" 
@@ -12,6 +13,8 @@ Movieclub::Application.routes.draw do
    root 'welcome#index'
   get '/search' => 'search_movie#movie'
   match '/signup', to: 'users#new',  via: 'get'
+   match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   # Example of regular route:
   
