@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130904175534) do
+ActiveRecord::Schema.define(version: 20130907120002) do
 
   create_table "movies", force: true do |t|
     t.datetime "created_at"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20130904175534) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
+
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end
