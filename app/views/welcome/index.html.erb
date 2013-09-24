@@ -14,6 +14,8 @@
    <%= text_field_tag(:q) %>
    <%= submit_tag("Search", class: "btn btn-large btn-primary") %>
    <% end %>
+   <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
   </div>
   </div>
 <% else %>
